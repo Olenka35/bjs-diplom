@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Выход из личного кабинета
 
@@ -48,9 +48,9 @@ moneyManager.addMoneyCallback = function (data) {
      ApiConnector.addMoney(data, response => {
           if (response.success) {
                ProfileWidget.showProfile(response.data);
-               moneyManager.setMessage(response, "Баланс пополнен");
+               moneyManager.setMessage(response, 'Баланс пополнен');
           } else {
-               moneyManager.setMessage(!response, "Ошибка. Баланс не может быть пополнен");
+               moneyManager.setMessage(!response, 'Ошибка. Баланс не может быть пополнен');
           }
      });
 }
@@ -61,9 +61,9 @@ moneyManager.conversionMoneyCallback = function (data) {
      ApiConnector.convertMoney(data, response => {
           if (response.success) {
                ProfileWidget.showProfile(response.data);
-               moneyManager.setMessage(response, "Конвертация прошла успешно");
+               moneyManager.setMessage(response, 'Конвертация прошла успешно');
           } else {
-               moneyManager.setMessage(!response, "Ошибка. Конвертация не может быть выполнена");
+               moneyManager.setMessage(!response, 'Ошибка. Конвертация не может быть выполнена');
           }
      });
 }
@@ -74,9 +74,9 @@ moneyManager.sendMoneyCallback = function (data) {
      ApiConnector.transferMoney(data, response => {
           if (response.success) {
                ProfileWidget.showProfile(response.data);
-               moneyManager.setMessage(response, "Перевод осуществлен успешно");
+               moneyManager.setMessage(response, 'Перевод осуществлен успешно');
           } else {
-               moneyManager.setMessage(!response, "Ошибка. Перевод не может быть осуществлен");
+               moneyManager.setMessage(!response, 'Ошибка. Перевод не может быть осуществлен');
           }
      });
 }
@@ -103,9 +103,9 @@ const favoritesWidget = new FavoritesWidget ();
                     favoritesWidget.clearTable(response.data);
                     favoritesWidget.fillTable(response.data);
                     moneyManager.updateUsersList(response.data);
-                    favoritesWidget.setMessage(response, "Пользователь успешно добавлен в избранное");
+                    favoritesWidget.setMessage(response, 'Пользователь успешно добавлен в избранное');
                } else {
-                    favoritesWidget.setMessage(!response, "Ошибка. Пользователь не может быть добавлен");
+                    favoritesWidget.setMessage(!response, 'Ошибка. Пользователь не может быть добавлен');
                }
      });
 }
@@ -118,9 +118,9 @@ const favoritesWidget = new FavoritesWidget ();
                     favoritesWidget.clearTable(response.data);
                     favoritesWidget.fillTable(response.data);
                     moneyManager.updateUsersList(response.data);
-                    favoritesWidget.setMessage(response, "Пользователь успешно удален из избранного");
+                    favoritesWidget.setMessage(response, 'Пользователь успешно удален из избранного');
                } else {
-                    favoritesWidget.setMessage(!response, "Ошибка. Пользователь не может быть удален");
+                    favoritesWidget.setMessage(!response, 'Ошибка. Пользователь не может быть удален');
                }
      });
 }
